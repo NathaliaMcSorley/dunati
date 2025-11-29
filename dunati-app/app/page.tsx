@@ -1,10 +1,6 @@
-import { DeployButton } from "@/components/deploy-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { AuthButton } from "@/components/auth-button";
-import { Hero } from "@/components/hero";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { ConnectSupabaseSteps } from "@/components/tutorial/connect-supabase-steps";
-import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -16,9 +12,8 @@ export default function Home() {
         <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
           <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
             <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"}>Next.js Supabase Starter</Link>
+              <Link href={"/"}>Dunati</Link>
               <div className="flex items-center gap-2">
-                <DeployButton />
               </div>
             </div>
             {!hasEnvVars ? (
@@ -30,26 +25,50 @@ export default function Home() {
             )}
           </div>
         </nav>
-        <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
-          <Hero />
-          <main className="flex-1 flex flex-col gap-6 px-4">
-            <h2 className="font-medium text-xl mb-4">Next steps</h2>
-            {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-          </main>
-        </div>
 
-        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-          <p>
-            Powered by{" "}
+        <div className="max-w-4xl w-full rounded-lg shadow-lg p-8">
+          <header className="mb-6">
+            <h1 className="text-3xl font-bold">Dunati — Soluções em Cilindros</h1>
+            <p className="mt-2 text-sm text-slate-600">
+              Fabricação, manutenção e reparo de cilindros e serviços de serralheria industrial com precisão e agilidade.
+            </p>
+          </header>
+
+          <section className="mb-6">
+            <h2 className="font-semibold">Nossos serviços</h2>
+            <ul className="list-disc ml-5 mt-2 text-sm">
+              <li>Reparo e manutenção de cilindros hidráulicos</li>
+              <li>Fabricação sob desenho e usinagem</li>
+              <li>Serralheria industrial e montagem</li>
+              <li>Teste hidrostático e inspeção técnica</li>
+            </ul>
+          </section>
+
+          <section className="mb-6">
+            <h2 className="font-semibold">Por que escolher a Dunati</h2>
+            <div className="mt-2 text-sm">
+              Atendimento rápido · Peças sob medida · Equipe especializada · Garantia de serviço
+            </div>
+          </section>
+
+          <div className="flex gap-3 mt-6">
+            <Link href="/" className="inline-block px-4 py-2 bg-blue-600 text-white rounded">
+              Entrar
+            </Link>
             <a
-              href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+              href=""
+              className="inline-block px-4 py-2 border border-slate-300 rounded"
               target="_blank"
-              className="font-bold hover:underline"
               rel="noreferrer"
             >
-              Supabase
+              Solicitar orçamento
             </a>
-          </p>
+          </div>
+        </div>
+
+
+        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
+          <p><b>© 2025 Dunati</b> — Todos os direitos reservados.</p>
           <ThemeSwitcher />
         </footer>
       </div>

@@ -1,3 +1,9 @@
+/**
+ * Browser Supabase client factory
+ *
+ * Returns a Supabase client configured for client-side usage.
+ * Uses only public (publishable/anon) keys and is safe to expose in the browser.
+ */
 import { createBrowserClient } from "@supabase/ssr";
 
 export function createClient() {

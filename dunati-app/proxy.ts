@@ -1,3 +1,5 @@
+/* Handles session updates via middleware for SSR.
+   Needed for Supabase SSR auth to work. */
 import { updateSession } from "@/lib/supabase/proxy";
 import { type NextRequest } from "next/server";
 

@@ -1,7 +1,6 @@
-import { EnvVarWarning } from "@/components/env-var-warning";
-import { AuthButton } from "@/components/auth-button";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/lib/utils";
+import { AuthButton } from "@/components/auth/auth-button";
+import { ThemeSwitcher } from "@/components/footer/theme-switcher";
+import Nav from "@/components/nav/nav";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -9,23 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center">
       <div className="flex-1 w-full flex flex-col gap-20 items-center">
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"}>Dunati</Link>
-              <div className="flex items-center gap-2">
-              </div>
-            </div>
-            {!hasEnvVars ? (
-              <EnvVarWarning />
-            ) : (
-              <Suspense>
-                <AuthButton />
-              </Suspense>
-            )}
-          </div>
-        </nav>
-
+        <Nav/>
         <div className="max-w-4xl w-full rounded-lg shadow-lg p-8">
           <header className="mb-6">
             <h1 className="text-3xl font-bold">Dunati — Soluções em Cilindros</h1>
@@ -65,12 +48,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-
-        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-          <p><b>© 2025 Dunati</b> — Todos os direitos reservados.</p>
-          <ThemeSwitcher />
-        </footer>
       </div>
     </main>
   );

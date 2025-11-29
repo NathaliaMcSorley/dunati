@@ -1,3 +1,10 @@
+/**
+ * Server-side Supabase client factory
+ *
+ * Creates a per-request Supabase client for server-side usage.
+ * Keeps session cookies in sync via Next.js `cookies()` store.
+ * Important: create a new client for each call (do not cache globally).
+ */
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 

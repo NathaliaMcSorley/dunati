@@ -38,7 +38,7 @@ export function ForgotPasswordForm({
       if (error) throw error;
       setSuccess(true);
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred");
+      setError(error instanceof Error ? error.message : "Occorreu um erro.");
     } finally {
       setIsLoading(false);
     }
@@ -49,13 +49,13 @@ export function ForgotPasswordForm({
       {success ? (
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Check Your Email</CardTitle>
-            <CardDescription>Password reset instructions sent</CardDescription>
+            <CardTitle className="text-2xl">Check seu email</CardTitle>
+            <CardDescription>As instruçoes para redefinir a senha foram enviada</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              If you registered using your email and password, you will receive
-              a password reset email.
+              Se você se cadastrou usando seu e-mail e senha, você receberá
+              um e-mail para redefinir sua senha.
             </p>
           </CardContent>
         </Card>
